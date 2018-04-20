@@ -161,7 +161,7 @@ PlayerSettings:
     Android: com.Company.ProductName
     Standalone: unity.Unity Technologies.Native Rendering Plugin Example
     Tizen: com.Company.ProductName
-    iOS: com.unity.arkitscene
+    iOS: com.unity.arTown
     tvOS: com.Company.ProductName
   buildNumber:
     iOS: 0
@@ -763,7 +763,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
   cloudProjectId: c3bffbe4-e2ae-4785-9d37-f42e4d748c4f
-  projectName: 
+  projectName: arTown
   organizationId: dryheat
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
