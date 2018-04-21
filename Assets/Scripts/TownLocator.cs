@@ -62,6 +62,12 @@ public class TownLocator : MonoBehaviour
 		UpdateLookTarget();
 	}
 
+	public void DestroyEnemy(Enemy targetEnemy)
+	{
+		enemiesList.Remove(targetEnemy);
+		Destroy(targetEnemy.gameObject);
+	}
+
 
 	public void UpdateLookTarget()
 	{

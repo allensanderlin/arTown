@@ -6,6 +6,7 @@ public class TownCannon : MonoBehaviour {
 
 	public CannonBall cannonBallPrefab;
 	public Transform launchPoint;
+	float attackDistance = 0.5f;
 	float activationTimer = 0.0f;
 
 	float attackTimer = 0.0f;
@@ -29,15 +30,19 @@ public class TownCannon : MonoBehaviour {
 		Enemy closestEnemy = TownLocator.instance.GetClosestEnemy(transform.position);
 		if(closestEnemy != null)
 		{
-			transform.LookAt(closestEnemy.transform.position);
-
-			attackTimer -= Time.deltaTime;
-			if(attackTimer <= 0)
+			float distance = Vector3.Distance(closestEnemy.transform.position, transform.position);
+			if(distance <= attackDistance)
 			{
-				attackTimer = 3.0f;
+				transform.LookAt(closestEnemy.transform.position);
 
-				CannonBall newCannonBall = Instantiate(cannonBallPrefab) as CannonBall;
-				newCannonBall.Fire(launchPoint.transform.position, closestEnemy);
+				attackTimer -= Time.deltaTime;
+				if(attackTimer <= 0)
+				{
+					attackTimer = 3.0f;
+
+					CannonBall newCannonBall = Instantiate(cannonBallPrefab) as CannonBall;
+					newCannonBall.Fire(launchPoint.transform.position, closestEnemy);
+				}
 			}
 		}
 	}
